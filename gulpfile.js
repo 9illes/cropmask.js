@@ -10,7 +10,7 @@ var connect = require('gulp-connect');
 
 // Lint Task
 gulp.task('lint', function() {
-    return gulp.src('src/*.js')
+    return gulp.src('js/*.js')
         .pipe(jshint())
         .pipe(jshint.reporter('default'));
 });
@@ -33,14 +33,18 @@ gulp.task('connect', function() {
 });
 
 gulp.task('html', function () {
-  gulp.src('*.html')
+    gulp.src(['*.html'])
     .pipe(connect.reload());
 });
 
+gulp.task('styles', function() {
+    gulp.src(['css/*.css'])
+    .pipe(connect.reload());
+});
 
 // Watch Files For Changes
 gulp.task('watch', function() {
-    gulp.watch(['src/*.js'], ['lint', 'scripts']);
+    gulp.watch(['js/*.js', '*.html', 'css/*.css'], ['lint', 'scripts', 'html', 'styles']);
 });
 
 // Default Task

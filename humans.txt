@@ -12,5 +12,5 @@
 # TECHNOLOGY COLOPHON
 
     CSS3, HTML5
-    H5bp, jQuery, Modernizr, Normalize.css
+    H5bp, purecss.io, jQuery, Modernizr, Normalize.css
     fabricjs

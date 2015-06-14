@@ -10,33 +10,67 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
 
-        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/pure-min.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
+
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate</p>
+        <div class="header">
+            <div class="home-menu pure-menu pure-menu-horizontal">
+                <a class="pure-menu-heading" href="">cropmask.js</a>
 
-        <button class="btn-preview">Create snapshot</button>
-        <img class="img-preview" src="" />
+                <ul class="pure-menu-list">
+                    <li class="pure-menu-item pure-menu-selected"><a href="https://github.com/9illes/cropmask.js" class="pure-menu-link">Repository</a></li>
+                    <li class="pure-menu-item"><a href="https://twitter.com/9illes" class="pure-menu-link">Twitter</a></li>
+                </ul>
+            </div>
+        </div>
 
-        <select name="device">
-            <option value="966x604">Google Nexus 7 (l)</option>
-            <option value="604x966">Google Nexus 7 (p)</option>
-        </select>
+        <ol>
+    	    <li>Drop a picture in the dashed area</li>
+    	    <li>Select mask dimensions</li>
+    	    <li>Adjust positioning</li>
+    	    <li>Click "Create snapshot" and save the preview.</li>
+    	</ol>
 
-        <p>
-        Label <input type="text" name="label" /> : Width : <input type="text" name="width" /> X Height : <input type="text" name="height" />
-        </p>
-        <button class="add-dimension">Add</button>
+        <fieldset>
+            <legend>Add new mask dimensions</legend>
+
+            <input type="text" name="label" placeholder="Label" />
+            <input type="text" name="width" placeholder="width (px)" /> x
+            <input type="text" name="height" placeholder="height (px)"/>
+
+            <button class="add-dimension pure-button pure-button-primary">Add</button>
+        </fieldset>
+
+        <fieldset>
+            <legend>Select mask to apply</legend>
+
+            <select name="device">
+                <option value="">--</option>
+                <option value="966x604">Google Nexus 7 (l)</option>
+                <option value="604x966">Google Nexus 7 (p)</option>
+            </select>
+
+            <button class="btn-preview pure-button pure-button-primary">Create snapshot</button>
+
+            <label for="snapshot-full-size">Toggle fullsize snapshot</label>
+            <input id="snapshot-full-size" class="snapshot-full-size" type="checkbox">
+
+            <div class="snapshot">
+                <img class="img-preview" src="" />
+            </div>
+
+        </fieldset>
+
 
         <div class="canvas-wrapper dropzone">
-            <p>Drop a picture in here !</p>
+            <p></p>
             <canvas id="c" width="1204" height="1024" class="canvas-demo"></canvas>
         </div>
 
